@@ -70,7 +70,7 @@ jobs:
           echo "::set-output name=callback_url::$(aws ssm get-parameter --name $callback_url_param | jq -r .Parameter.Value)"
           # echo "::set-output name=app_dynamics_key::$(aws ssm get-parameter --name $app_dynamics_key_param | jq -r .Parameter.Value)"
       - name: Setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ env.node_version }}
 
